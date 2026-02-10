@@ -1,0 +1,1 @@
+newman run "DummyJSON API Testing-Final Project.postman_collection.json" -e DummyJSON-QA.postman_environment.json -d "Add New Cart Data Driven.csv" -r htmlextra --reporter-htmlextra-export Newman_Report.html

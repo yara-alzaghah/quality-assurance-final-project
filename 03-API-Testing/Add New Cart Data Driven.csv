@@ -1,0 +1,15 @@
+add_cart_case,userId,products,expected_status_add_cart
+add new cart,1,"[
+    { ""id"": 1, ""quantity"": 2 },
+    { ""id"": 2, ""quantity"": 1 }
+  ]",201
+add new cart,5,"[
+    { ""id"": 2, ""quantity"": 4 },
+    { ""id"": 3, ""quantity"": 1 },
+    { ""id"": 7, ""quantity"": 2 }
+  ]",201
+add new cart with empty userId field,"""""","[
+    { ""id"": 3, ""quantity"": 2 },
+    { ""id"": 2, ""quantity"": 1 }
+  ]",400
+add new cart with empty products field,12,[],400
