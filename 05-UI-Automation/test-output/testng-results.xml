@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-08T00:32:49 EET" name="Default suite" finished-at="2026-02-08T00:33:22 EET" duration-ms="33086">
+    <groups>
+    </groups>
+    <test started-at="2026-02-08T00:32:49 EET" name="Default test" finished-at="2026-02-08T00:33:22 EET" duration-ms="33086">
+      <class name="standard_user.StandardUserTests">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:32:49 EET" name="Setup" finished-at="2026-02-08T00:32:52 EET" duration-ms="2849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="Login()[pri:1, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:32:52 EET" name="Login" finished-at="2026-02-08T00:32:55 EET" duration-ms="2972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="VerifyProductsPage()[pri:2, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:32:55 EET" name="VerifyProductsPage" finished-at="2026-02-08T00:32:56 EET" duration-ms="1036" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyProductsPage -->
+        <test-method signature="VerifyProductsCount()[pri:3, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:32:56 EET" name="VerifyProductsCount" finished-at="2026-02-08T00:32:57 EET" duration-ms="1026" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyProductsCount -->
+        <test-method signature="AddAllProductsToCart()[pri:4, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:32:57 EET" name="AddAllProductsToCart" finished-at="2026-02-08T00:33:02 EET" duration-ms="4912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddAllProductsToCart -->
+        <test-method signature="RemoveProductFromCart()[pri:5, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:02 EET" name="RemoveProductFromCart" finished-at="2026-02-08T00:33:03 EET" duration-ms="1216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RemoveProductFromCart -->
+        <test-method signature="GoToCartPage()[pri:6, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:03 EET" name="GoToCartPage" finished-at="2026-02-08T00:33:05 EET" duration-ms="1660" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoToCartPage -->
+        <test-method signature="SortProductsLowToHigh()[pri:7, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:05 EET" name="SortProductsLowToHigh" finished-at="2026-02-08T00:33:08 EET" duration-ms="3121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SortProductsLowToHigh -->
+        <test-method signature="SortProductsHighToLow()[pri:8, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:08 EET" name="SortProductsHighToLow" finished-at="2026-02-08T00:33:10 EET" duration-ms="1817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SortProductsHighToLow -->
+        <test-method signature="Checkout()[pri:9, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:10 EET" name="Checkout" finished-at="2026-02-08T00:33:18 EET" duration-ms="7725" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Checkout -->
+        <test-method signature="Logout()[pri:10, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:18 EET" name="Logout" finished-at="2026-02-08T00:33:21 EET" duration-ms="2900" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:standard_user.StandardUserTests@65fe9e33]" started-at="2026-02-08T00:33:21 EET" name="TearDown" finished-at="2026-02-08T00:33:22 EET" duration-ms="1682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- standard_user.StandardUserTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
