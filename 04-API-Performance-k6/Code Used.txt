@@ -1,0 +1,7 @@
+postman-to-k6 "DummyJSON-API performance Testing-Final Project.postman_collection.json" -e "DummyJSON-Performance Env.postman_environment.json" -o dummyJson_ks.js
+
+k6 run smokeTest.js
+k6 run loadTest.js
+
+k6 run smokeTest.js --summary-export=smoke-summary.json
+k6 run loadTest.js --summary-export=load-summary.json
