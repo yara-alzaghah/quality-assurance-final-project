@@ -1,0 +1,65 @@
+name: CI - Newman + k6 Smoke + Reports
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  REPORT_DIR: reports
+
+jobs:
+  run-api-and-k6:
+    runs-on: windows-latest
+
+    steps:
+      # =========================
+      # Checkout repository
+      # =========================
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # =========================
+      # 1) API TESTING (Postman / Newman)
+      # =========================
+      - name: Setup Node.js (for Newman)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Newman + HTML reporter
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
+      - name: Run Newman (generate HTML report)
+        run: |
+          mkdir "${{ env.REPORT_DIR }}"
+          mkdir "${{ env.REPORT_DIR }}\newman"
+
+          newman run "03-API-Testing/DummyJSON API Testing-Final Project.postman_collection.json" -e "03-API-Testing/DummyJSON-QA.postman_environment.json" -d "03-API-Testing/Add New Cart Data Driven.csv" -r htmlextra --reporter-htmlextra-export "${{ env.REPORT_DIR }}\newman\newman-report.html"
+
+      # =========================
+      # 2) PERFORMANCE TESTING (k6) – SMOKE ONLY
+      # =========================
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run k6 smoke test only (NO load test)
+        run: |
+          mkdir "${{ env.REPORT_DIR }}\k6"
+
+          k6 run "04-API-Performance-k6/smokeTest.js" --summary-export="${{ env.REPORT_DIR }}\k6\smoke-summary.json"
+
+          echo "CI NOTE: Load testing is NOT executed in GitHub Actions to avoid impacting public APIs." > "${{ env.REPORT_DIR }}\k6\CI_NOTE.txt"
+
+      # =========================
+      # 3) UPLOAD REPORTS (Deploy as artifact)
+      # =========================
+      - name: Upload Reports Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports
+          path: reports
